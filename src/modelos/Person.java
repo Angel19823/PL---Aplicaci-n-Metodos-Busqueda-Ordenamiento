@@ -1,9 +1,9 @@
 package modelos;
 
-public class Modelo {
+public class Person {
     String name;
     int edad;
-    public Modelo(String name, int edad) {
+    public Person(String name, int edad) {
         this.name = name;
         this.edad = edad;
     }
