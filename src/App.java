@@ -1,8 +1,7 @@
-import java.lang.ModuleLayer.Controller;
-
-import javax.swing.text.View;
-
 import controllers.*;
+
+
+//Profe, la verdad no se que error esta pasando aqui, estuve viendo y no parece ser algo del codigo, no lo supe arreglar
 
 import vistas.view;
 

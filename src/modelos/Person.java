@@ -23,7 +23,7 @@ public class Person {
 
     @Override
     public String toString() {
-        return "Modelo [name=" + name + ", edad=" + edad + "]";
+        return name + " " + edad;
     }
     
     

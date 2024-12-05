@@ -15,6 +15,10 @@ public class SortingMethods {
                 }
             }
         }
+        System.out.println("Ördeado por burbuja: ");
+        for (Person person : personas) {
+            System.out.println(person);
+        }
         return personas;
     }
 
@@ -32,6 +36,10 @@ public class SortingMethods {
             personas[indice] = personas[i];
             personas[i] = aux;
         }
+        System.out.println("Ördeado por Seleccion: ");
+        for (Person person : personas) {
+            System.out.println(person);
+        }
         return personas;
     }
 
@@ -45,6 +53,10 @@ public class SortingMethods {
                     personas[j + 1] = aux;
                 }
             }
+        }
+        System.out.println("Ördeado por burbuja: ");
+        for (Person person : personas) {
+            System.out.println(person);
         }
         return personas;
     }
@@ -60,6 +72,10 @@ public class SortingMethods {
             Person aux = personas[indice];
             personas[indice] = personas[i];
             personas[i] = aux;
+        }
+        System.out.println("Ördeado por Seleccion: ");
+        for (Person person : personas) {
+            System.out.println(person);
         }
         return personas;
     }

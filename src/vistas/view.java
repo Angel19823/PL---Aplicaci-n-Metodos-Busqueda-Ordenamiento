@@ -11,6 +11,8 @@ public class view {
         System.out.println("1. Ingrese la persona: ");
         System.out.println("2. Mostrar personas: ");
         System.out.println("3. Ordenar personas: ");
+        System.out.println("4. Busqueda por edad: ");
+        System.out.println("5. Budqueda por nombre: ");
         System.out.println("100 salida");
         System.out.println("Ingrese una opcion: ");
         return teclado.nextInt();
@@ -28,16 +30,18 @@ public class view {
     }
     public String inputName(){
         System.out.println("Ingrese el nombre: ");
+        teclado.nextLine();
         return teclado.nextLine();
     }
     public int inputAge(){
-        System.out.println("Ingrese la edad: ");
+        System.out.println("`Ingrese la edad: ");
         return teclado.nextInt();
     }
     public void showMessage(String message) {
         System.out.println("LOG" + message);
     }
     public void showPersons(Person[] personas) {
+        System.out.println("Lista de personas:");
         for (Person persona : personas) {
             System.out.println(persona);
         }
@@ -46,10 +50,6 @@ public class view {
         if (personas == null || personas.length == 0) {
             System.out.println("No hay personas para mostrar.");
             return;
-        }
-        System.out.println("Lista de personas:");
-        for (Person persona : personas) {
-            System.out.println(persona); 
         }
     }
     public int selectorSortingMethod() {
@@ -62,5 +62,8 @@ public class view {
         return teclado.nextInt();
     }
     
-
+    public String inpuString(String message){
+        System.out.println(message);
+        return teclado.nextLine();
+    }
 }

@@ -31,16 +31,16 @@ public class Controlador {
                     view.displayPersons(personas);
                     view.showPersons(personas);
                     view.displayPersons(personas);
-                    addPerson();
+                   //addPerson();
                     break;
                 case 3:
                     sortPersons();
                     break;
                 case 4:
-                    //searchPersonByAge();
+                    searchPersonByAge();
                     break;
                 case 5:
-                    // searchPersonByAge();
+                    searchPersonByName();
                     break;
                 case 100:
                     System.out.println("Adios");
@@ -48,7 +48,7 @@ public class Controlador {
                 System.out.println("Opcion no valida");
                     break;
             }
-        } while (option!=0);
+        } while (option!=100);
     }
 
     
@@ -65,6 +65,7 @@ public class Controlador {
         }else{
             view.showMessage("Opción no válida");
         }
+        view.displayPersons(personas);
     }
 
     public void inputPersons(){
@@ -75,25 +76,46 @@ public class Controlador {
         }
     }
 
-    private void addPerson() {
+    // private void addPerson() {
 
-        if(personas == null){
-            view.showMessage("No existen personas");
-            inputPersons();
-        }else{
-            int numeroPersonas = view.inputInt("Ingrese el numero de personas a adicionar: ");
+    //     if(personas == null){
+    //         view.showMessage("No existen personas");
+    //         inputPersons();
+    //     }else{
+    //         int numeroPersonas = view.inputInt("Ingrese el numero de personas a adicionar: ");
 
-            Person[] personasTotal = new Person[personas.length + numeroPersonas];
+    //         Person[] personasTotal = new Person[personas.length + numeroPersonas];
 
-            for (int i = 0; i < personas.length; i++) {
-                personasTotal[i] = personas[i];
-            }
+    //         for (int i = 0; i < personas.length; i++) {
+    //             personasTotal[i] = personas[i];
+    //         }
 
-            for (int i = personas.length; i < personasTotal.length; i++) {
-                personasTotal[i] = view.inputPerson();
-            }
-            personas = personasTotal;
+    //         for (int i = personas.length; i < personasTotal.length; i++) {
+    //             personasTotal[i] = view.inputPerson();
+    //         }
+    //         personas = personasTotal;
+    //     }
+    // }
+
+    public void searchPersonByAge() {
+        int age = view.inputInt("Ingrese la edad a buscar: ");
+        Person result = searchMetods.busquedaBinAge(personas, age);
+        if (result != null) {
+            view.showMessage("Persona encontrada: " + result);
+        } else {
+            view.showMessage("Persona no encontrada.");
         }
+    }
+
+    public void searchPersonByName() {
+        String name = view.inpuString("Ingrese el nombre a buscar: ");
+        Person result = searchMetods.busquedaBinName(personas, name);
+        if (result != null) {
+            view.showMessage("Persona encontrada: " + result);
+        } else {
+            view.showMessage("Persona no encontrada.");
+        }
+
     }
 }
     
